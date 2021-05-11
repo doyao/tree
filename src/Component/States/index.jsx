@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {RouterPrompt} from '../../utils/Prompt'
 const scaleNames = {
     c: 'Celsius',
     f: 'Fahrenheit'
@@ -34,14 +35,15 @@ function Counter(props) {
 }
 export default function States() {
     const [count, setCount] = useState(1);
-
+    const [eidState,seteid]=useState(false);
     return (
         <fieldset>
             <TemperatureInput scale="c" count={count}/>
             <TemperatureInput scale="f" count={count}/>
             <Counter count={count}/>
-            <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
-            <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
+            <button onClick={() => setCount(prevCount => prevCount - 1,seteid(true))}>-</button>
+            <button onClick={() => setCount(prevCount => prevCount + 1,seteid(true))}>+</button>
+            <RouterPrompt promptBoolean={eidState}></RouterPrompt>
         </fieldset>
     )
 }

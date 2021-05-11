@@ -34,7 +34,7 @@ function Darks(props){
                         <li key={index}>姓名：{item.name},年龄：{item.age}</li>
                     )
                 })
-            }
+        }
         </ul>
         </div>
     )
@@ -55,13 +55,13 @@ export default function UseReducer() {
         }
     }
     return(
-        <Darks
+            <Darks
             users={users}
             dispatch={dispatch}
             handleSubmit={handleSubmit}
             inputRef={inputRef}
             />
-        )
+        )      
 }
 
 
